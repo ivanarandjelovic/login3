@@ -3,7 +3,15 @@
 var React = require('react');
 var Router = require('react-router');
 var Step1Form = require('./step1form');
+var LoginActions = require('../actions/loginActions');
 var Link = Router.Link;
+
+function prepareLoginForm(user) {
+	return {
+		username: user.username,
+		"password:SX:": user.password
+	};
+}
 
 var UsernamePwdPage = React.createClass({
 
@@ -34,15 +42,16 @@ var UsernamePwdPage = React.createClass({
 	},
 
 	proceedWithLogin: function(event) {
-		event.preventDefault();
-		// TODO: Validate
 
-		//Attempt Login
+			event.preventDefault();
 
+//			if (!this.authorFormIsValid()) {
+//				return;
+//			}
+
+		LoginActions.loginStep(prepareLoginForm(this.state.user));
 
 		this.setState({dirty: false});
-
-		this.transitionTo('step2');
 	},
 
 	render: function() {
