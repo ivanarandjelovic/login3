@@ -8,7 +8,8 @@ var reactify = require('reactify');  // Transforms React JSX to JS
 var source = require('vinyl-source-stream'); // Use conventional text streams with Gulp
 var concat = require('gulp-concat'); //Concatenates files
 var lint = require('gulp-eslint'); //Lint JS files, including JSX
-var uglify = require('gulp-uglify');
+var uglify = require('gulp-uglify'); // This is intended only for production
+var buffer = require('vinyl-buffer'); // Required to convert file object to buffer, so gulp-uglify can work on it
 
 var config = {
 	port: 9005,
@@ -53,6 +54,8 @@ gulp.task('js', function() {
 		.bundle()
 		.on('error', console.error.bind(console))
 		.pipe(source('bundle.js'))
+//		.pipe(buffer()) // <----- convert from streaming to buffered vinyl file object
+//		.pipe(uglify()) // now gulp-uglify works
 		.pipe(gulp.dest(config.paths.dist + '/scripts'))
 		.pipe(connect.reload());
 });
