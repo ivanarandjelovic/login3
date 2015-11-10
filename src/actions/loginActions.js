@@ -8,7 +8,7 @@ var LoginActions = {
 		// TODO: post login form here, retrieve response data and then dispatch it
 
 		var loginResponseData = {
-			s: 1
+			s: 2
 		};
 
 		//Hey dispatcher, go tell all the stores that an author was just created.
