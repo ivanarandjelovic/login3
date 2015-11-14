@@ -36,8 +36,10 @@ var LoginStore = assign({}, EventEmitter.prototype, {
 
 /* Take over values from the reponse and store them as current login data */
 function updateLoginData(data) {
-  if(data.s) {
+  console.log("updateLoginData : " + JSON.stringify(data));
+  if(data.s !== undefined) {
     _loginData.state = data.s;
+    console.log("LoginStore: _loginData.state becomes : " + (data.s));
   }
   // TODO: complete this for all possible values
 }

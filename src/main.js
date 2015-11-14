@@ -1,8 +1,8 @@
 "use strict";
 
-var InitializeActions = require('./actions/initializeActions');
 var StateMonitor = require('./components/stateMonitor');
+var LoginActions = require('./actions/loginActions');
 var AppRouter = require('./appRouter.js');
 
-InitializeActions.initApp();
 StateMonitor.init();
+LoginActions.initialLoginAction();
