@@ -4,7 +4,6 @@ var React = require('react');
 var Router = require('react-router');
 var Step1Form = require('./step1form');
 var LoginActions = require('../actions/loginActions');
-var StateMonitor = require('../components/stateMonitor');
 var Link = Router.Link;
 
 function prepareLoginForm(user) {
@@ -14,7 +13,7 @@ function prepareLoginForm(user) {
 	};
 }
 
-var UsernamePwdPage = React.createClass({
+var Step1Page = React.createClass({
 
 	mixins: [
 		Router.Navigation
@@ -51,7 +50,6 @@ var UsernamePwdPage = React.createClass({
 //			}
 
 		LoginActions.loginStep(prepareLoginForm(this.state.user));
-		//StateMonitor.onStateChange(this);
 
 		this.setState({dirty: false});
 	},
@@ -69,4 +67,4 @@ var UsernamePwdPage = React.createClass({
 	}
 });
 
-module.exports = UsernamePwdPage;
+module.exports = Step1Page;

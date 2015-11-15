@@ -2,9 +2,10 @@
 
 var React = require('react');
 var Router = require('react-router');
+var toastr = require('toastr');
 var Link = Router.Link;
 
-var LoginDonePage = React.createClass({
+var Step10Page = React.createClass({
 
   mixins: [
 		Router.Navigation
@@ -14,8 +15,9 @@ var LoginDonePage = React.createClass({
 		event.preventDefault();
 
     // TODO: Change this to start app for real
-    this.transitionTo('loginDone');
+    toastr.success('Here it goes, login redirect to: ' + 'TODO');
 	},
+
   cancelLogin: function(event) {
 		event.preventDefault();
 
@@ -36,4 +38,4 @@ var LoginDonePage = React.createClass({
 	}
 });
 
-module.exports = LoginDonePage;
+module.exports = Step10Page;

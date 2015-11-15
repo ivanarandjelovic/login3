@@ -3,7 +3,14 @@
 var React = require('react');
 var Router = require('react-router');
 var Step2Form = require('./step2form');
+var LoginActions = require('../actions/loginActions');
 var Link = Router.Link;
+
+function prepareLoginForm(user) {
+	return {
+		"tan": user.tan
+	};
+}
 
 var Step2Page = React.createClass({
 
@@ -37,10 +44,10 @@ var Step2Page = React.createClass({
 
 		//Attempt Login, step 2
 
+		LoginActions.loginStep(prepareLoginForm(this.state.user));
 
 		this.setState({dirty: false});
 
-    this.transitionTo('loginDone');
 	},
 
 	render: function() {

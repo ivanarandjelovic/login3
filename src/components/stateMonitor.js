@@ -33,7 +33,15 @@ var StateMonitor = {
       AppRouter.transitionTo("step2");
       break;
     case 10:
-      AppRouter.transitionTo("loginDone");
+      AppRouter.transitionTo("step10");
+      break;
+    case 31:
+      // we move to next state automatically
+      LoginActions.loginStep({});
+      break;
+    case 33:
+      // we move to next state automatically
+      LoginActions.loginStep({});
       break;
     default:
       AppRouter.transitionTo("app");
