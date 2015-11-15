@@ -3,5 +3,5 @@
 var keyMirror = require('react/lib/keyMirror');
 
 module.exports = keyMirror({
-	LOGIN_STEP: null
+  LOGIN_STEP: null
 });
