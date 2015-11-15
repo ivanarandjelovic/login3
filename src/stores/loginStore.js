@@ -8,7 +8,8 @@ var _ = require('lodash');
 var CHANGE_EVENT = 'change';
 
 var _loginData = {
-  state: null
+  state: null,
+  redirectLocation: null
 };
 
 var LoginStore = assign({}, EventEmitter.prototype, {
@@ -40,6 +41,10 @@ function updateLoginData(data) {
   if(data.s !== undefined) {
     _loginData.state = data.s;
     console.log("LoginStore: _loginData.state becomes : " + (data.s));
+  }
+  if(data.redirectLocation !== undefined) {
+    _loginData.redirectLocation = data.redirectLocation;
+    console.log("LoginStore: _loginData.redirectLocation becomes : " + (data.redirectLocation));
   }
   // TODO: complete this for all possible values
 }

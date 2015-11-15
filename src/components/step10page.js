@@ -2,6 +2,8 @@
 
 var React = require('react');
 var Router = require('react-router');
+var LoginActions = require('../actions/loginActions');
+var LoginStore = require('../stores/loginStore');
 var toastr = require('toastr');
 var Link = Router.Link;
 
@@ -14,8 +16,12 @@ var Step10Page = React.createClass({
 	proceedWithLogin: function(event) {
 		event.preventDefault();
 
+    // Just submit empty request to get redirect location
+    LoginActions.loginStep({});
+
     // TODO: Change this to start app for real
-    toastr.success('Here it goes, login redirect to: ' + 'TODO');
+  //  toastr.success('Here it goes, login redirect to: ' + LoginStore.getLoginData().redirectLocation);
+
 	},
 
   cancelLogin: function(event) {

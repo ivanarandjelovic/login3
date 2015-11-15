@@ -5,6 +5,7 @@ var Router = require('react-router');
 var LoginStore = require('../stores/loginStore');
 var AppRouter = require('../appRouter.js');
 var LoginActions = require('../actions/loginActions');
+var toastr = require('toastr');
 
 /*
 This object monitors current state and makes necessary transitions
@@ -33,7 +34,14 @@ var StateMonitor = {
       AppRouter.transitionTo("step2");
       break;
     case 10:
-      AppRouter.transitionTo("step10");
+      if(LoginStore.getLoginData().redirectLocation) {
+        // Time to dedirect to start the application
+        // TODO: Change this to start app for real
+        toastr.success('Here it goes, login redirect to: ' + LoginStore.getLoginData().redirectLocation);
+      } else {
+        // Not yet time to start the app, just show final screen
+        AppRouter.transitionTo("step10");
+      }
       break;
     case 31:
       // we move to next state automatically

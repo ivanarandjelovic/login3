@@ -27,7 +27,7 @@ var LoginActions = {
 		// TODO: post login form here, retrieve response data and then dispatch it
 
     //Mockup: simply post data with current state (adding state here is needed for mockup only!!!)
-		var loginResponseData = LoginApi.postLoginStep(_.merge({state: LoginStore.getCurrentState()}, loginForm));
+		var loginResponseData = LoginApi.postLoginStep(_.merge({state: LoginStore.getCurrentState()}, 		loginForm));
 
 		console.log("login data received: " + JSON.stringify(loginResponseData));
 
