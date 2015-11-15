@@ -7,6 +7,15 @@ var LoginStore = require('../stores/loginStore');
 
 var LoginActions = {
 
+	dispatchHelper: function(eventData) {
+		if(Dispatcher.isDispatching()) {
+			window.setTimeout(function () {
+				Dispatcher.dispatch(eventData);
+			});
+		} else {
+			Dispatcher.dispatch(eventData);
+		}
+	},
 
 	loginStep: function(loginForm) {
 		// TODO: post login form here, retrieve response data and then dispatch it
@@ -16,11 +25,12 @@ var LoginActions = {
 
 		console.log("login data received: " + JSON.stringify(loginResponseData));
 
-		//Hey dispatcher, go tell all the stores that an author was just created.
-		Dispatcher.dispatch({
+		//Dispatch event about new login data/state.
+		this.dispatchHelper({
 			actionType: ActionTypes.LOGIN_STEP,
 			data: loginResponseData
 		});
+
 	},
 
 
