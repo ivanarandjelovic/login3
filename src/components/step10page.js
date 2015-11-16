@@ -27,8 +27,8 @@ var Step10Page = React.createClass({
   cancelLogin: function(event) {
 		event.preventDefault();
 
-    // TODO: Change this to start app for real
-    this.transitionTo('app');
+    // Submit request with cancelation request
+    LoginActions.loginStep({cancel: "true"});
 	},
 
 	render: function() {
