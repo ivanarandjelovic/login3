@@ -5,15 +5,18 @@ var Router = require('react-router');
 var Link = Router.Link;
 
 var Header = React.createClass({
-	render: function() {
-		return (
-        <nav className="navbar navbar-default">
-          <div className="container-fluid">
-              Header
+  render: function() {
+    return (
+        <div class="container">
+          <div className="navbar navbar-default">
+            <div className="container-fluid">
+                Header
+            </div>
           </div>
-        </nav>
-		);
-	}
+          <div class="page-header"><h1>IMg here</h1></div>
+        </div>
+    );
+  }
 });
 
 module.exports = Header;

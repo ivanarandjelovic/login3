@@ -9,7 +9,7 @@ $ = jQuery = require('jquery');
 var App = React.createClass({
 	render: function() {
 		return (
-			<div>
+			<div class="container">
 				<Header/>
 				<div className="container-fluid">
 					<RouteHandler/>
