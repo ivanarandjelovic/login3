@@ -16,7 +16,7 @@ function prepareLoginForm(user) {
 var Step1Page = React.createClass({
 
 	mixins: [
-		Router.Navigation
+	Router.Navigation
 	],
 
 	getInitialState: function() {
@@ -43,28 +43,26 @@ var Step1Page = React.createClass({
 
 	proceedWithLogin: function(event) {
 
-			event.preventDefault();
+		event.preventDefault();
 
 //			if (!this.authorFormIsValid()) {
 //				return;
 //			}
 
-		LoginActions.loginStep(prepareLoginForm(this.state.user));
+LoginActions.loginStep(prepareLoginForm(this.state.user));
 
-		this.setState({dirty: false});
-	},
+this.setState({dirty: false});
+},
 
-	render: function() {
-		return (
-			<div className="jumbotron">
-				<Step1Form
-					user={this.state.user}
-					errors={this.state.errors}
-					onChange={this.setUserState}
-					onNext={this.proceedWithLogin}/>
-			</div>
+render: function() {
+	return (
+		<Step1Form
+		user={this.state.user}
+		errors={this.state.errors}
+		onChange={this.setUserState}
+		onNext={this.proceedWithLogin}/>
 		);
-	}
+}
 });
 
 module.exports = Step1Page;

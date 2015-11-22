@@ -33,13 +33,11 @@ var Step10Page = React.createClass({
 
 	render: function() {
 		return (
-			<div className="jumbotron">
         <form>
           <h3>Login Done</h3>
           <input type="submit" value="Start" className="btn btn-default" onClick={this.proceedWithLogin} />
           <input type="submit" value="Cancel" className="btn" onClick={this.cancelLogin} />
         </form>
-			</div>
 		);
 	}
 });

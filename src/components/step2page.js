@@ -15,7 +15,7 @@ function prepareLoginForm(user) {
 var Step2Page = React.createClass({
 
   mixins: [
-    Router.Navigation
+  Router.Navigation
   ],
 
   getInitialState: function() {
@@ -57,8 +57,8 @@ var Step2Page = React.createClass({
   },
 
   render: function() {
-    return ( < div className = "jumbotron" >
-      < Step2Form user = {
+    return ( 
+      <Step2Form user = {
         this.state.user
       }
       errors = {
@@ -70,9 +70,9 @@ var Step2Page = React.createClass({
       onNext = {
         this.proceedWithLogin
       }
-      /> < /div>
-    );
-  }
+      /> 
+      );
+}
 });
 
 module.exports = Step2Page;
