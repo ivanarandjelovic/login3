@@ -7,7 +7,7 @@ var Link = Router.Link;
 var Footer = React.createClass({
 	render: function() {
 		return (
-          <div className="container panel-footer ">
+          <div className="">
               Footer
           </div>
 		);

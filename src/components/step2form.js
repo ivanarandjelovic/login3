@@ -7,8 +7,7 @@ var Step2Form = React.createClass({
 	render: function() {
 		return (
       <form>
-				<h1>Login Step 2</h1>
-				<Input
+			<Input
 					name="tan"
 					label="TAN"
 					value={this.props.user.tan}

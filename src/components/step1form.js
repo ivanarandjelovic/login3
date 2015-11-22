@@ -7,7 +7,6 @@ var Step1Form = React.createClass({
 	render: function() {
 		return (
       <form>
-				<h1>Login Step 1</h1>
 				<Input
 					name="username"
 					label="Username"
